@@ -8,6 +8,9 @@ const userSchema = new mongoose.Schema(
     role: { type: String, enum: ["educator", "student"],required: true },
     photoUrl: { type: String,  default: ""},
     enrolledCourses: [{type: mongoose.Schema.Types.ObjectId,ref: 'Course' }],    
+    resetOtp:{ type:String},
+    otpExpires:{type:Date},
+    isOtpVerifed:{type:Boolean,default:false}
   },
   { timestamps: true }
 );

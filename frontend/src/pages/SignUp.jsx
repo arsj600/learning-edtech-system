@@ -12,6 +12,8 @@ import { ClipLoader } from 'react-spinners'
 import { toast } from 'react-toastify'
 import { useDispatch } from 'react-redux'
 import { setUserData } from '../redux/userSlice'
+import {signInWithPopup} from "firebase/auth"
+import { auth, provider } from '../../utils/firebase'
 
 function SignUp() {
     const [name,setName]= useState("")

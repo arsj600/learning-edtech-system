@@ -12,6 +12,8 @@ import { toast } from 'react-toastify'
 import { ClipLoader } from 'react-spinners'
 import { useDispatch } from 'react-redux'
 import { setUserData } from '../redux/userSlice'
+import { signInWithPopup } from 'firebase/auth'
+import { auth, provider } from '../../utils/firebase'
 
 function Login() {
     const [email,setEmail]= useState("")
@@ -35,28 +37,28 @@ function Login() {
         }
         
     }
-    //  const googleLogin = async () => {
-    //         try {
-    //             const response = await signInWithPopup(auth,provider)
+     const googleLogin = async () => {
+            try {
+                const response = await signInWithPopup(auth,provider)
                 
-    //             let user = response.user
-    //             let name = user.displayName;
-    //             let email=user.email
-    //             let role=""
+                let user = response.user
+                let name = user.displayName;
+                let email=user.email
+                let role=""
                 
                 
-    //             const result = await axios.post(serverUrl + "/api/auth/googlesignup" , {name , email , role}
-    //                 , {withCredentials:true}
-    //             )
-    //             dispatch(setUserData(result.data))
-    //             navigate("/")
-    //             toast.success("Login Successfully")
-    //         } catch (error) {
-    //             console.log(error)
-    //             toast.error(error.response.data.message)
-    //         }
+                const result = await axios.post(serverUrl + "/api/auth/googlesignup" , {name , email , role}
+                    , {withCredentials:true}
+                )
+                dispatch(setUserData(result.data))
+                navigate("/")
+                toast.success("Login Successfully")
+            } catch (error) {
+                console.log(error)
+                toast.error(error.response.data.message)
+            }
             
-    //     }
+        }
   return (
     <div className='bg-[#dddbdb] w-[100vw] h-[100vh] flex items-center justify-center flex-col gap-3'>
             <form className='w-[90%] md:w-200 h-150 bg-[white] shadow-xl rounded-2xl flex' onSubmit={(e)=>e.preventDefault()}>
@@ -80,7 +82,7 @@ function Login() {
                     </div>
                      
                     <button className='w-[80%] h-[40px] bg-black text-white cursor-pointer flex items-center justify-center rounded-[5px]' disabled={loading} onClick={handleLogin}>{loading?<ClipLoader size={30} color='white' /> : "Login"}</button>
-                    <span className='text-[13px] cursor-pointer text-[#585757]' onClick={()=>navigate("/forgotpassword")}>Forget your password?</span>
+                    <span className='text-[13px] cursor-pointer text-[#585757]' onClick={()=>navigate("/forgot")}>Forget your password?</span>
     
                     <div className='w-[80%] flex items-center gap-2'>
                         <div className='w-[25%] h-[0.5px] bg-[#c4c4c4]'></div>
