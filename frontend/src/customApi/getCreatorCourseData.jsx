@@ -12,7 +12,7 @@ const getCreatorCourseData = () => {
     useEffect(()=>{
     const getCreatorData = async () => {
       try {
-        const result = await axios.get(serverUrl + "/api/course/getcreator" , {withCredentials:true})
+        const result = await axios.get(serverUrl + "/api/course/getcreatorcourses" , {withCredentials:true})
         
          await dispatch(setCreatorCourseData(result.data))
 

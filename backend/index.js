@@ -1,27 +1,43 @@
-import express from "express"
-import dotenv from "dotenv"
+
+import express from "express";
+import dotenv from "dotenv";
 import connectDb from "./config/connectDb.js";
 import cookieParser from "cookie-parser";
-dotenv.config();
-    import authRouter from "./routes/authRoute.js";
-import cors from "cors"
+import cors from "cors";
+
+
+import authRouter from "./routes/authRoute.js";
 import userRouter from "./routes/userRoute.js";
 import courseRouter from "./routes/courseRoute.js";
+import paymentRouter from "./routes/paymentRoute.js";
+import aiRouter from "./routes/aiRoute.js";
+import reviewRouter from "./routes/reviewRoute.js";
 
-const port =process.env.PORT || 4000;
-const app =express();
 
+dotenv.config();
 connectDb();
-app.use(express.json())
-app.use(cookieParser());
-app.use(cors({
-    origin:"http://localhost:5173",
-    credentials:true
-}))
 
-app.use("/api/auth",authRouter)
-app.use("/api/user",userRouter)
-app.use("/api/course",courseRouter)
+const app = express();
+const port = process.env.PORT || 4000;
+
+app.use(express.json());
+app.use(cookieParser());
+
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true,
+}));
+
+// API routes
+app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
+app.use("/api/course", courseRouter);
+app.use("/api/payment", paymentRouter);
+app.use("/api/ai", aiRouter);
+app.use("/api/review", reviewRouter);
+
+
+
 
 
 app.listen(port,()=>{

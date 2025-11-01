@@ -2,11 +2,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { serverUrl } from '../App';
+import { serverUrl } from '../App.jsx';
 import { FaArrowLeftLong } from "react-icons/fa6";
 import img from "../assets/empty.jpg"
-import Card from "../components/Card.jsx"
-import { setSelectedCourseData } from '../redux/courseSlice';
+import Card from "../component/Card.jsx"
+import { setSelectedCourseData } from '../redux/courseSlice.js';
 import { FaLock, FaPlayCircle } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import { FaStar } from "react-icons/fa6";

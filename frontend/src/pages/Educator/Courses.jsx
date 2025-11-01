@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import   { useEffect } from 'react'
 
 import { FaEdit } from "react-icons/fa";
 
@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import { setCreatorCourseData } from '../../redux/courseSlice';
 import img1 from "../../assets/empty.jpg"
 import { FaArrowLeftLong } from "react-icons/fa6";
+  
 function Courses() {
 
   let navigate = useNavigate()
@@ -53,7 +54,7 @@ function Courses() {
           </button>
         </div>
 
-        {/* For larger screens (table layout) */}
+   
 
         <div className="hidden md:block bg-white rounded-xl shadow p-4 overflow-x-auto">
           <table className="min-w-full text-sm">

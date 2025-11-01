@@ -3,13 +3,18 @@ import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const CourseCard = ({ thumbnail, title, category, price ,id , reviews }) => {
+ 
+ 
   const navigate = useNavigate()
-   const calculateAverageRating = (reviews) => {
-  if (!reviews || reviews.length === 0) return 0;
+ 
+  const calculateAverageRating = (reviews) => {
+ 
+    if (!reviews || reviews.length === 0) return 0;
 
   const total = reviews.reduce((sum, review) => sum + review.rating, 0);
   return (total / reviews.length).toFixed(1); // rounded to 1 decimal
 };
+
 
 // Usage:
 const avgRating = calculateAverageRating(reviews);

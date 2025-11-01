@@ -10,7 +10,6 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUserData } from '../redux/userSlice';
-
 function Nav() {
   let [showHam,setShowHam] = useState(false)
   let [showPro,setShowPro] = useState(false)

@@ -2,6 +2,7 @@ import Course from "../models/courseModel.js";
 import razorpay from 'razorpay'
 import User from "../models/userModel.js";
 import dotenv from "dotenv"
+
 dotenv.config()
 const razorpayInstance = new razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,

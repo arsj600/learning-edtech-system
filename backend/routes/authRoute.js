@@ -4,6 +4,7 @@ import { googleSignup, login, logOut, resetPassword, sendOtp, signUp, verifyOtp 
 const authRouter =express.Router();
 
 authRouter.post("/signup",signUp)
+
 authRouter.post("/login",login)
 authRouter.get("/logout",logOut)
 authRouter.post("/sendopt",sendOtp)

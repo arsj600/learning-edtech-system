@@ -17,7 +17,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
+        {/*  Links */}
         <div className="lg:w-[30%] md:w-[100%]">
           <h3 className="text-white font-semibold mb-2">Quick Links</h3>
           <ul className="space-y-1 text-sm">
@@ -28,7 +28,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Explore Categories */}
+        {/*Categories */}
         <div className="lg:w-[30%] md:w-[100%]">
           <h3 className="text-white font-semibold mb-2">Explore Categories</h3>
           <ul className="space-y-1 text-sm">
@@ -41,7 +41,7 @@ const Footer = () => {
 
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom  */}
       <div className="border-t border-gray-700 mt-10 pt-5 text-sm text-center text-gray-500">
         © {new Date().getFullYear()} LearnAI. All rights reserved.
       </div>

@@ -7,7 +7,9 @@ import { serverUrl } from '../../App'
 import { setLectureData } from '../../redux/lectureSlice'
 import { toast } from 'react-toastify'
 import { ClipLoader } from 'react-spinners'
+
 function EditLecture() {
+
     const [loading,setLoading]= useState(false)
     const [loading1,setLoading1]= useState(false)
     const {courseId , lectureId} = useParams()
@@ -19,6 +21,7 @@ function EditLecture() {
     const [isPreviewFree,setIsPreviewFree] = useState(false)
 
     const formData = new FormData()
+
     formData.append("lectureTitle",lectureTitle)
     formData.append("videoUrl",videoUrl)
     formData.append("isPreviewFree",isPreviewFree)
@@ -55,22 +58,12 @@ function EditLecture() {
       }
       
     }
-
-
-
-
-
-
-   
-
-    
-
     const navigate = useNavigate()
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="w-full max-w-xl bg-white rounded-xl shadow-lg p-6 space-y-6">
 
-        {/* Header Inside Box */}
+        {/* Header */}
         <div className="flex items-center gap-2 mb-2">
           <FaArrowLeft className="text-gray-600 cursor-pointer" onClick={()=>navigate(`/createlecture/${courseId}`)} />
           <h2 className="text-xl font-semibold text-gray-800">Update Your Lecture</h2>

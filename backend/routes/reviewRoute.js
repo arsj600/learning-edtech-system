@@ -1,6 +1,6 @@
 import express from "express"
-import isAuth from "../middlewares/isAuth.js"
-import { addReview, getAllReviews } from "../controllers/reviewController.js"
+import isAuth from "../middleware/isAuth.js"
+import { addReview, getAllReviews } from "../controller/reviewController.js"
 
 
 

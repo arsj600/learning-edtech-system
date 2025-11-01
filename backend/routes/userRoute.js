@@ -2,7 +2,7 @@ import express from "express"
 import isAuth from "../middleware/isAuth.js"
 import { getCurrentUser, UpdateProfile } from "../controller/userController.js"
 import upload from "../middleware/multer.js"
-// import upload from "../middlewares/multer.js"
+
 
 
 

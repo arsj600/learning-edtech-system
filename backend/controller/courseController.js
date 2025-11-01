@@ -1,4 +1,4 @@
-import uploadOnCloudinary from "../configs/cloudinary.js"
+import uploadOnCloudinary from "../config/cloudinary.js"
 import Course from "../models/courseModel.js"
 import Lecture from "../models/lectureModel.js"
 import User from "../models/userModel.js"
@@ -200,9 +200,6 @@ export const removeLecture = async (req,res) => {
 
 
 //get Creator data
-
-
-// controllers/userController.js
 
 export const getCreatorById = async (req, res) => {
   try {

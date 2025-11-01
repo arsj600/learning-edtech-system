@@ -5,6 +5,7 @@ import { SiViaplay } from "react-icons/si";
 import { useNavigate } from 'react-router-dom';
 
 function Cardspage() {
+  
   const [popularCourses,setPopularCourses] =useState([]);
   const {courseData} = useSelector(state=>state.course)
   const navigate = useNavigate()

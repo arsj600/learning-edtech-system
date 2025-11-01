@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import  { useEffect, useRef, useState } from 'react'
 import img from "../../assets/empty.jpg"
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useNavigate, useParams } from 'react-router-dom';
@@ -11,7 +11,8 @@ import { ClipLoader } from 'react-spinners';
 import { setCourseData } from '../../redux/courseSlice';
 
 
-function AddCourses() {
+function AddCourses()
+ {
     const navigate= useNavigate()
     const {courseId} = useParams()
    
